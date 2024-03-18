@@ -17,9 +17,9 @@ cur = db.cursor()
 
 # handling
 handling = {"day1": True,
-            "day2": False,
-            "results1": False,
-            "results2": False}
+            "day2": True,
+            "results1": True,
+            "results2": True}
 
 choices_int = {
     "1️⃣": 1,

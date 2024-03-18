@@ -70,6 +70,7 @@ async def start_handler(message: types.Message, state: FSMContext):
 
         cur.execute(f"INSERT INTO user_{message.chat.id} VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                     ('', '', '', '', '', '', '', '', '', ''))
+        db.commit()
 
         await bot.send_message(chat_id=message.chat.id,
                                text="Здравствуйте! Этот бот предназначен для проведения Сигма Олимпиады 2024 года.\n" +

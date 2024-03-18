@@ -19,10 +19,10 @@ async def choice(message: types.Message, state: FSMContext):
 
         await state.set_state(MainSG.main_menu)
 
-    elif message.text == "Задания первого тура":
+    elif message.text == "Задания I тура":
         if handling["day1"]:
             await bot.send_message(chat_id=message.chat.id,
-                                   text="Ссылка на задания первого тура",
+                                   text="https://teletype.in/@shvetsovmakar/SigmaOlympiadDay1",
                                    reply_markup=keyboards.tasks_choice)
 
         else:
@@ -36,7 +36,7 @@ async def choice(message: types.Message, state: FSMContext):
                                    text=text,
                                    reply_markup=keyboards.tasks_choice)
 
-    elif message.text == "Задания второго тура":
+    elif message.text == "Задания II тура":
         if handling["day2"]:
             await bot.send_message(chat_id=message.chat.id,
                                    text="Ссылка на задания второго тура",

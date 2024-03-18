@@ -8,18 +8,18 @@ main_menu = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Задания �
                                           [KeyboardButton(text="Результаты 🏆")]],
                                 resize_keyboard=True)
 
-tasks_choice = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Задания первого тура")],
-                                             [KeyboardButton(text="Задания второго тура")],
+tasks_choice = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Задания I тура")],
+                                             [KeyboardButton(text="Задания II тура")],
                                              [KeyboardButton(text="В главное меню 🏠")]],
                                    resize_keyboard=True)
 
-solutions_choice = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Отослать решение задания первого тура")],
-                                                 [KeyboardButton(text="Отослать решение задания второго тура")],
+solutions_choice = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Отослать решение задания I тура")],
+                                                 [KeyboardButton(text="Отослать решение задания II тура")],
                                                  [KeyboardButton(text="В главное меню 🏠")]],
                                        resize_keyboard=True)
 
-results_choice = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Результаты первого тура")],
-                                               [KeyboardButton(text="Результаты второго тура")],
+results_choice = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Результаты I тура")],
+                                               [KeyboardButton(text="Результаты II тура")],
                                                [KeyboardButton(text="Результаты олимпиады")],
                                                [KeyboardButton(text="В главное меню 🏠")]],
                                      resize_keyboard=True)

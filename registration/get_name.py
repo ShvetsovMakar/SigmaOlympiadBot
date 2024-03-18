@@ -13,11 +13,17 @@ get_name_router = Router()
 async def get_name(message: types.Message, state: FSMContext):
     name = message.text
 
-    cur.execute(f"UPDATE users SET name = \"{name}\" WHERE chat_id = {message.chat.id}")
-    db.commit()
+    if len(name) > 20:
+        await bot.send_message(chat_id=message.chat.id,
+                               text="Это имя слишком длинное!\n"
+                                    "Введите имя, длина которого не более 20 символов")
+    else:
 
-    await bot.send_message(chat_id=message.chat.id,
-                           text=f"Ваше имя - {name}!",
-                           reply_markup=keyboards.to_main_menu)
+        cur.execute(f"UPDATE users SET name = \"{name}\" WHERE chat_id = {message.chat.id}")
+        db.commit()
 
-    await state.set_state(MainSG.to_main_menu)
+        await bot.send_message(chat_id=message.chat.id,
+                               text=f"Ваше имя - {name}!",
+                               reply_markup=keyboards.to_main_menu)
+
+        await state.set_state(MainSG.to_main_menu)

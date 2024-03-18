@@ -19,7 +19,7 @@ async def choice(message: types.Message, state: FSMContext):
 
         await state.set_state(MainSG.main_menu)
 
-    elif message.text == "Отослать решение задания первого тура":
+    elif message.text == "Отослать решение задания I тура":
         if handling["day1"]:
             await bot.send_message(chat_id=message.chat.id,
                                    text=strings.solution_choice,
@@ -41,7 +41,7 @@ async def choice(message: types.Message, state: FSMContext):
                                    text=text,
                                    reply_markup=keyboards.solutions_choice)
 
-    elif message.text == "Отослать решение задания второго тура":
+    elif message.text == "Отослать решение задания II тура":
         if handling["day2"]:
             await bot.send_message(chat_id=message.chat.id,
                                    text=strings.solution_choice,
