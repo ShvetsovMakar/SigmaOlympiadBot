@@ -33,6 +33,13 @@ async def main_menu(message: types.Message, state: FSMContext):
 
         await state.set_state(MainSG.results_choice)
 
+    elif message.text == "Изменить имя 🔄":
+        await bot.send_message(chat_id=message.chat.id,
+                               text=strings.change_name,
+                               reply_markup=keyboards.to_main_menu)
+
+        await state.set_state(MainSG.change_name)
+
     else:
         await bot.send_message(chat_id=message.chat.id,
                                text=strings.error,

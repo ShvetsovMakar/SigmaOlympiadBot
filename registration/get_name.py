@@ -11,7 +11,7 @@ get_name_router = Router()
 
 @get_name_router.message(MainSG.get_name)
 async def get_name(message: types.Message, state: FSMContext):
-    name = message.text
+    name = message.text.replace('"', "\'\'")
 
     if len(name) > 20:
         await bot.send_message(chat_id=message.chat.id,

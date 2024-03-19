@@ -12,3 +12,5 @@ class MainSG(StatesGroup):
 
     solution_choice = State()
     send_solution = State()
+
+    change_name = State()

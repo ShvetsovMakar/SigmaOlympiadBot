@@ -5,7 +5,8 @@ to_main_menu = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="В главн
 
 main_menu = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Задания 📋"),
                                            KeyboardButton(text="Отослать решение ✏️")],
-                                          [KeyboardButton(text="Результаты 🏆")]],
+                                          [KeyboardButton(text="Результаты 🏆"),
+                                           KeyboardButton(text="Изменить имя 🔄")]],
                                 resize_keyboard=True)
 
 tasks_choice = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Задания I тура")],

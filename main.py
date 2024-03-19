@@ -25,6 +25,8 @@ from solutions.send_solution import send_solution_router
 
 from tasks.tasks_choice import tasks_choice_router
 
+from change_name.change_name import change_name_router
+
 main_router = Router()
 
 
@@ -80,7 +82,8 @@ async def start_handler(message: types.Message, state: FSMContext):
 
 
 dp.include_routers(main_router, get_name_router, main_menu_transition_router, main_menu_router, results_choice_router,
-                   solutions_choice_router, tasks_choice_router, solution_choice_router, send_solution_router)
+                   solutions_choice_router, tasks_choice_router, solution_choice_router, send_solution_router,
+                   change_name_router)
 
 
 async def main():

@@ -20,10 +20,12 @@ async def get_solution(message: types.Message, state: FSMContext):
         await state.set_state(MainSG.main_menu)
 
     else:
+        solution = message.text.replace('"', "\'\'")
+
         cur.execute(f"SELECT cur_task FROM users WHERE chat_id = {message.chat.id}")
         cur_task = cur.fetchall()[0][0]
 
-        cur.execute(f"UPDATE user_{message.chat.id} SET task{cur_task} = \"{message.text}\"")
+        cur.execute(f"UPDATE user_{message.chat.id} SET task{cur_task} = \"{solution}\"")
         db.commit()
 
         await bot.send_message(chat_id=message.chat.id,
