@@ -16,10 +16,10 @@ db = connect("main_bot/participants.db")
 cur = db.cursor()
 
 # handling
-handling = {"day1": True,
-            "day2": True,
-            "results1": True,
-            "results2": True}
+handling = {"day1": False,
+            "day2": False,
+            "results1": False,
+            "results2": False}
 
 choices_int = {
     "1️⃣": 1,
